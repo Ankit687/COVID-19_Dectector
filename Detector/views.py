@@ -8,6 +8,18 @@ def index(request):
     return render(request, 'index.html')
 
 
+def XRayImage(request):
+    if request.method == 'POST' and request.FILES['xRay']:
+        xRay = request.FILES['xRay']
+        fs = FileSystemStorage()
+        filename = fs.save(xRay.name, xRay)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'uploadImage.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'uploadImage.html')
+
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
