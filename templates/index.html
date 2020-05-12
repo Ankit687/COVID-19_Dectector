@@ -19,12 +19,27 @@
     <nav class="navbar navbar-light bg-secondary">
         <a class="navbar-brand">COVID-19 Predictor</a>
         <ul class="nav justify-content-end">
+
+            {% if user.is_authenticated %}
+
             <li class="nav-item">
-                <a class="nav-link btn-dark active" href="/login/">Login<span class="sr-only">(current)</span></a>
+                <a class="nav-link btn-dark" href="/login/">Hello, {{ user.first_name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-dark" href="/signup/">logout</a>
+            </li>
+
+            {% else %}
+
+            <li class="nav-item">
+                <a class="nav-link btn-dark" href="/login/">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-dark" href="/signup/">SignUp</a>
             </li>
+
+            {% endif %}
+
         </ul>
     </nav>
 

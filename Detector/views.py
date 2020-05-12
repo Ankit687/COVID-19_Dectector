@@ -3,12 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 
 
-def Index(request):
+def index(request):
     return render(request, 'index.html')
-
-
-def home(request):
-    return render(request, 'home.html')
 
 
 def signup(request):

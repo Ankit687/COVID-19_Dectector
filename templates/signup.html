@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/signup/" method="post">
+    <form action="/index/" method="post">
         {% csrf_token %}
 
         <input type="text" name="username" id="" placeholder="username"> <br>
@@ -22,7 +22,7 @@
     </form>
 
     <a href="/login/">login</a> <br>
-    <a href="/home/">home</a>
+    <a href="/index/">home</a>
     <div>
         {% for message in messages %}
         <h3> {{ message }} </h3>
