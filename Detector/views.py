@@ -7,6 +7,10 @@ def Index(request):
     return render(request, 'index.html')
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -52,7 +56,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/Index/')
+            return redirect('/home/')
         else:
             messages.info(request, 'invalid username')
             return redirect('/login/')
