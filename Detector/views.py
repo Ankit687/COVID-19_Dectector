@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from django.core.files.storage import FileSystemStorage
 
 
 def index(request):
@@ -52,7 +53,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/home/')
+            return redirect('/')
         else:
             messages.info(request, 'invalid username')
             return redirect('/login/')
@@ -63,4 +64,4 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/Index/')
+    return redirect('/')

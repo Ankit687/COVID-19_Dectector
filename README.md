@@ -17,3 +17,11 @@ this web app will detect COVID-19 with x-ray of heart using Deep learning
 
 # sudo docker exec ***running_container_name*** mkdir templates
 
+# sudo docker exec ***running_container_name*** python manage.py migrate
+
+# sudo docker exec -it ***running_container_name*** python manage.py createsuperuser
+
+# sudo docker exec ***running_container_name*** pip install Pillow
+
+# sudo docker exec ***running_container_name*** python manage.py makemigrations
+

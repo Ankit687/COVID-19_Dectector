@@ -17,25 +17,25 @@
 <body>
 
     <nav class="navbar navbar-light bg-secondary">
-        <a class="navbar-brand">COVID-19 Predictor</a>
+        <a class="navbar-brand text-white">COVID-19 Predictor</a>
         <ul class="nav justify-content-end">
 
             {% if user.is_authenticated %}
 
             <li class="nav-item">
-                <a class="nav-link btn-dark" href="/login/">Hello, {{ user.first_name }}</a>
+                <class class="nav-link text-white" href="#">Hello, {{ user.first_name }}</class>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn-dark" href="/signup/">logout</a>
+                <a class="nav-link btn-secondary" href="/logout/">logout</a>
             </li>
 
             {% else %}
 
             <li class="nav-item">
-                <a class="nav-link btn-dark" href="/login/">Login</a>
+                <a class="nav-link btn-secondary" href="/login/">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn-dark" href="/signup/">SignUp</a>
+                <a class="nav-link btn-secondary" href="/signup/">SignUp</a>
             </li>
 
             {% endif %}
@@ -64,6 +64,20 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    {% if user.is_authenticated %}
+
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="xRay">
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
+
+    {% endif %}
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
