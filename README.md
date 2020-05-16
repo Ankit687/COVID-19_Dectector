@@ -1,27 +1,39 @@
 # COVID-19_Dectector
-this web app will detect COVID-19 with x-ray of heart using Deep learning
+## this web app will detect COVID-19 with x-ray of heart using Deep learning model
 
+this command will give root access to user
 <pre>sudo chown -R $USER:$USER .</pre>
 
+create container and start django project
 <pre>sudo docker-compose run webapp django-admin startproject Detector_COVID .</pre>
 
+all folders is given root access to user 
 <pre>sudo chown -R $USER:$USER .</pre>
 
+run container
 <pre>sudo docker-compose up</pre>
 
-<pre>sudo docker exec ***running_container_name*** python manage.py startapp Detector</pre>
+create django app
+<pre>sudo docker exec webapp python manage.py startapp Detector</pre>
 
+all folders is given root access to user 
 <pre>sudo chown -R $USER:$USER .</pre>
 
-<pre>sudo docker exec ***running_container_name*** mkdir static</pre>
+create static folder for static files(css and javascript files & photos and videos)in running container
+<pre>sudo docker exec webapp mkdir static</pre>
 
-<pre>sudo docker exec ***running_container_name*** mkdir templates</pre>
+create templates folder for html files in running containser
+<pre>sudo docker exec webapp mkdir templates</pre>
 
-<pre>sudo docker exec ***running_container_name*** python manage.py migrate</pre>
+migrate command for database in running container
+<pre>sudo docker exec webapp python manage.py migrate</pre>
 
-<pre>sudo docker exec -it ***running_container_name*** python manage.py createsuperuser</pre>
+create superuser in running container
+<pre>sudo docker exec -it webapp python manage.py createsuperuser</pre>
 
-<pre>sudo docker exec ***running_container_name*** pip install Pillow</pre>
+installing Pillow library
+<pre>sudo docker exec webapp pip install Pillow</pre>
 
-<pre>sudo docker exec ***running_container_name*** python manage.py makemigrations</pre>
+create makemigration for database in running container
+<pre>sudo docker exec webapp python manage.py makemigrations</pre>
 
