@@ -1,5 +1,5 @@
-# COVID-19_Dectector
-## this web app will detect COVID-19 with x-ray of heart using Deep learning model
+# COVID-19_Predictor
+## this web app will predict COVID-19 with x-ray of heart using Deep learning model
 
 this command will give root access to user
 <pre>sudo chown -R $USER:$USER .</pre>
